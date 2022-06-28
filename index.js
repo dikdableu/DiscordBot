@@ -5,6 +5,8 @@ const puppeteer = require('puppeteer-core');
 const client = new Discord.Client();
 const prefix = "!";
 
+client.login(config.BOT_TOKEN);
+
 client.on("message", function(message) { 
     if (message.author.bot) return;
     if (!message.content.startsWith(prefix)) return;      
@@ -53,5 +55,3 @@ client.on("message", function(message) {
             break;
     }
 }); 
-
-client.login(config.BOT_TOKEN);
