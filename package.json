@@ -1,0 +1,23 @@
+{
+  "name": "discordbot",
+  "version": "1.0.0",
+  "description": "Le bot qui sait tout",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dikdableu/DiscordBot.git"
+  },
+  "author": "Bastien Choisy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dikdableu/DiscordBot/issues"
+  },
+  "homepage": "https://github.com/dikdableu/DiscordBot#readme",
+  "dependencies": {
+    "discord.js": "^13.8.1",
+    "puppeteer-core": "^15.1.1"
+  }
+}
