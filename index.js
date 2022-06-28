@@ -23,7 +23,10 @@ client.on("message", function(message) {
             if(!args)
             {
                 (async () => {
-                    const browser = await puppeteer.launch();
+                    const browser = await puppeteer.launch({
+                        headless: true,
+                        args: ['--no-sandbox', '--disable-setuid-sandbox'],
+                    });
                     const page = await browser.newPage();
                     await page.goto('https://nomanssky.fandom.com/fr/wiki/Recettes_de_raffinerie');
                     let urls = await page.$$eval('.toc tbody > tr', links => {
@@ -38,7 +41,10 @@ client.on("message", function(message) {
                   })();
             }else{
                 (async () => {
-                    const browser = await puppeteer.launch();
+                    const browser = await puppeteer.launch({
+                        headless: true,
+                        args: ['--no-sandbox', '--disable-setuid-sandbox'],
+                    });
                     const page = await browser.newPage();
                     await page.goto('https://nomanssky.fandom.com/fr/wiki/'+args);
                     await page.screenshot({path: 'example.png'});
