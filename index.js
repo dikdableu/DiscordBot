@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 const config = require("./config.json");
-const puppeteer = require('puppeteer');
+const puppeteer = require('puppeteer-core');
 
 const client = new Discord.Client();
 const prefix = "!";
