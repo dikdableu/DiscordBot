@@ -19,7 +19,7 @@ client.on("message", function(message) {
         case "help":
             
             break;
-        case "recettes":$
+        case "recettes":
             if(!args)
             {
                 (async () => {
