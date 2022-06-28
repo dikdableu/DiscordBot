@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 const config = require("./config.json");
 const puppeteer = require('puppeteer-core');
 
-const client = new Discord.Client();
+const client = new Discord.Client({ intents: ["GUILDS", "GUILD_MESSAGES"] })
 const prefix = "!";
 
 client.login(config.BOT_TOKEN);
