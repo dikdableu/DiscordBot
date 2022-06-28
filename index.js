@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 const config = require("./config.json");
-const puppeteer = require('puppeteer-core');
+const puppeteer = require('puppeteer');
 
 const client = new Discord.Client({ intents: ["GUILDS", "GUILD_MESSAGES"] })
 const prefix = "!";
