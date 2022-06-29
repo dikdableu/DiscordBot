@@ -36,12 +36,8 @@ client.on("message", function(message) {
                     let urls1 = await page.evaluate(() => {
                         headings_elements_table1 = document.querySelectorAll('table tbody tr')
                         console.log('debug')
-                        console.log("test"+headings_elements_table1)
                         headings_array_table1 = Array.from(headings_elements_table1); 
-                        console.log("test1"+headings_array_table1)
                         headings_array_table1.map(heading => {
-                            console.log("test2"+heading)
-                            console.log("test3"+heading.textContent)
                             var tmpString = heading.textContent
                             var tmpStringModify = tmpString.replace('\n', ' ')
                             return tmpStringModify;
@@ -49,6 +45,7 @@ client.on("message", function(message) {
                     });
                     let urls2 = await page.evaluate(() => {
                         headings_elements_table1 = document.querySelectorAll('table:nth-child(2) tbody tr td ');
+                        console.log('debug1')
                         headings_array_table1 = Array.from(headings_elements_table1); 
                         headings_array_table1.map(heading => {
                             console.log(heading.textContent)
@@ -59,6 +56,7 @@ client.on("message", function(message) {
                     });
                     let urls3 = await page.evaluate(() => {
                         headings_elements_table1 = document.querySelectorAll('table:nth-child(3) tbody tr td');
+                        console.log('debug2')
                         headings_array_table1 = Array.from(headings_elements_table1); 
                         headings_array_table1.map(heading => {
                             console.log(heading.textContent)
