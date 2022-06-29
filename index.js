@@ -31,6 +31,7 @@ client.on("message", function(message) {
                             '--disable-setuid-sandbox',
                             '--no-sandbox',
                             '--disable-gpu',
+                            '--disable-web-security',
                         ]
                     })
                     const page = await browser.newPage();
@@ -52,6 +53,7 @@ client.on("message", function(message) {
                         "headless": true,
                         "executablePath": '/usr/bin/chromium',
                         "args": [
+                            '--disable-web-security',
                             '--disable-setuid-sandbox',
                             '--no-sandbox',
                             '--disable-gpu',
