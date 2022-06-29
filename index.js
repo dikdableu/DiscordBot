@@ -34,6 +34,7 @@ client.on("message", function(message) {
                     const page = await browser.newPage();
                     await page.goto('https://nomanssky.fandom.com/fr/wiki/Recettes_de_raffinerie');
                     let urls1 = await page.evaluate(() => {
+                        console.log(document)
                         console.log('test')
                         headings_elements_table1 = document.querySelectorAll('table tbody tr')
                         console.log('debug')
