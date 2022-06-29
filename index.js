@@ -45,7 +45,7 @@ client.on("message", function(message) {
 
 
                     let row = await page.evaluate(() => {
-                        headings_elements_table1 = document.querySelector("div.mw-parser-output table:nth-child(1) tbody tr")
+                        headings_elements_table1 = document.querySelector("div.mw-parser-output table:nth-child(1)")
                         headings_array_table1 = Array.from(headings_elements_table1); 
                         headings_array_table1.map(heading => heading.textContent);
                         console.log(headings_array_table1)
