@@ -69,7 +69,7 @@ client.on("message", function(message) {
                     //         return tmpStringModify;
                     //     });
                     // });
-                    console.log(urls1)
+                    
                     message.channel.send("Recettes : \n",{files: [{ image }]})
 
 
