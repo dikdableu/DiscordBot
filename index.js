@@ -36,7 +36,7 @@ client.on("message", function(message) {
                     let urls1 = await page.evaluate(() => {
                         console.log(document)
                         console.log('test')
-                        headings_elements_table1 = document.querySelectorAll('table tbody tr')
+                        headings_elements_table1 = document.querySelectorAll('td')
                         console.log('debug')
                         headings_array_table1 = Array.from(headings_elements_table1); 
                         headings_array_table1.map(heading => {
