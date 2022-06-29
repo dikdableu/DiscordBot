@@ -76,7 +76,8 @@ client.on("message", function(message) {
                             attachment: './capture.png', 
                             name: 'capture.png'
                         }]
-                    })
+                    }).then(console.log)
+                    .catch(console.error);
 
 
                     // message.reply("Recettes à un composant : \n \n" + urls1);
