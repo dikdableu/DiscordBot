@@ -24,13 +24,9 @@ client.on("message", function(message) {
             {
                 (async () => {
                     const browser = await puppeteer.launch({
-                        "dumpio": true,
                         "headless": true,
                         "executablePath": '/usr/bin/chromium',
                         "args": [
-                            '--disable-setuid-sandbox',
-                            '--no-sandbox',
-                            '--disable-gpu',
                             '--disable-web-security',
                         ]
                     })
@@ -49,13 +45,9 @@ client.on("message", function(message) {
             }else{
                 (async () => {
                     const browser = await puppeteer.launch({
-                        "dumpio": true,
                         "headless": true,
                         "executablePath": '/usr/bin/chromium',
                         "args": [
-                            '--disable-web-security',
-                            '--disable-setuid-sandbox',
-                            '--no-sandbox',
                             '--disable-gpu',
                         ]
                     })
