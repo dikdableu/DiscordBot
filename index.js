@@ -34,17 +34,14 @@ client.on("message", function(message) {
                     const page = await browser.newPage();
                     await page.goto('https://nomanssky.fandom.com/fr/wiki/Recettes_de_raffinerie');
                     let urls1 = await page.evaluate(() => {
-                        headings_elements = document.querySelectorAll("tbody tr");
-                        headings_array = Array.from(headings_elements);
-                        return headings_array.map(heading => heading.textContent);
-                        // headings_elements_table1 = document.querySelectorAll('tbody tr')
-                        // headings_array_table1 = Array.from(headings_elements_table1); 
-                        // headings_array_table1.map(heading => {
-                        //     console.log(heading.textContent)
-                        //     var tmpString = heading.textContent
-                        //     var tmpStringModify = tmpString.replace('\n', ' ')
-                        //     return heading.textContent;
-                        // });
+                        headings_elements_table1 = document.querySelectorAll("table:nth-child(1) tbody tr")
+                        headings_array_table1 = Array.from(headings_elements_table1); 
+                        headings_array_table1.map(heading => {
+                            console.log(heading.textContent)
+                            var tmpString = heading.textContent
+                            var tmpStringModify = tmpString.replace('\n', ' ')
+                            return tmpStringModify;
+                        });
                     });
                     // let urls2 = await page.evaluate(() => {
                     //     headings_elements_table1 = document.querySelectorAll('table:nth-child(2) tbody tr td ');
