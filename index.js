@@ -35,7 +35,7 @@ client.on("message", function(message) {
                     
                     await page.goto('https://nomanssky.fandom.com/fr/wiki/Recettes_de_raffinerie');
 
-                    const selector = 'div.mw-parser-output table:nth-child(1) tbody tr';
+                    const selector = 'div.mw-parser-output table tbody tr';
 
                     const row = await page.$$eval(selector, trs => trs.map(tr => {
                         const tds = [...tr.getElementsByTagName('td')];
