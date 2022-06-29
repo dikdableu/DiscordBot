@@ -37,7 +37,7 @@ client.on("message", function(message) {
 
                     const selector = '';
 
-                    const row = await page.$$eval('table:nth-of-type(1) > tbody tr td', elements => elements.map(element => element.innerHTML));
+                    const row = await page.$$eval('table:nth-of-type(1) > tbody tr td', elements => elements.map(element => element.textContent));
                     console.log(row)
                     
 
