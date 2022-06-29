@@ -40,7 +40,7 @@ client.on("message", function(message) {
                             console.log(heading.textContent)
                             var tmpString = heading.textContent
                             var tmpStringModify = tmpString.replace('\n', ' ')
-                            return tmpStringModify;
+                            return heading.textContent;
                         });
                     });
                     // let urls2 = await page.evaluate(() => {
