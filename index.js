@@ -37,9 +37,9 @@ client.on("message", function(message) {
                         headings_elements_table1 = document.querySelectorAll('td')
                         headings_array_table1 = Array.from(headings_elements_table1); 
                         headings_array_table1.map(heading => {
+                            console.log(tmpStringModify)
                             var tmpString = heading.textContent
                             var tmpStringModify = tmpString.replace('\n', ' ')
-                            console.log(tmpStringModify)
                             return tmpStringModify;
                         });
                     });
