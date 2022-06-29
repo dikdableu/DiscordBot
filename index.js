@@ -35,7 +35,7 @@ client.on("message", function(message) {
                     await page.goto('https://nomanssky.fandom.com/fr/wiki/Recettes_de_raffinerie');
 
                     let urls1 = await page.evaluate(() => {
-                        headings_elements_table1 = document.querySelectorAll('div.mw-parser-output table tbody tr')[0];
+                        headings_elements_table1 = document.querySelectorAll('table tbody tr')[0];
                         console.log(headings_elements_table1)
                         headings_array_table1 = Array.from(headings_elements_table1); 
                         headings_array_table1.map(heading => {
@@ -46,7 +46,7 @@ client.on("message", function(message) {
                         });
                     });
                     let urls2 = await page.evaluate(() => {
-                        headings_elements_table1 = document.querySelectorAll('div.mw-parser-output table tbody tr')[1];
+                        headings_elements_table1 = document.querySelectorAll('table tbody tr')[1];
                         headings_array_table1 = Array.from(headings_elements_table1); 
                         headings_array_table1.map(heading => {
                             console.log(heading.textContent)
@@ -56,7 +56,7 @@ client.on("message", function(message) {
                         });
                     });
                     let urls3 = await page.evaluate(() => {
-                        headings_elements_table1 = document.querySelectorAll('div.mw-parser-output table tbody tr')[2];
+                        headings_elements_table1 = document.querySelectorAll('table tbody tr')[2];
                         headings_array_table1 = Array.from(headings_elements_table1); 
                         headings_array_table1.map(heading => {
                             console.log(heading.textContent)
