@@ -35,20 +35,17 @@ client.on("message", function(message) {
                     
                     await page.goto('https://nomanssky.fandom.com/fr/wiki/Recettes_de_raffinerie');
 
-                    // const selector = 'div.mw-parser-output table:nth-child(1) tbody tr';
+                    const selector = '';
 
-                    // const row = await page.$$eval(selector, trs => trs.map(tr => {
-                    //     const tds = [...tr.getElementsByTagName('td')];
-                    //     return tds.map(td => td.textContent);
-                    // }));
-                    // console.log(row)
+                    const row = await page.$$eval('div.mw-parser-output table:nth-child(1) tbody tr', options => options.map(option => option.textContent));
+                    console.log(row)
+                    
 
-
-                    let row = await page.evaluate(() => {
-                        headings_table = document.querySelector("div.mw-parser-output table:first-child").innerHTML
-                        console.log(headings_table)
-                        return headings_table[1];
-                    });
+                    // let row = await page.evaluate(() => {
+                    //     headings_table = document.querySelector("div.mw-parser-output table:first-child").innerHTML
+                    //     console.log(headings_table)
+                    //     return headings_table[1];
+                    // });
 
 
                     // let urls2 = await page.evaluate(() => {
