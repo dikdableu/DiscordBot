@@ -35,13 +35,13 @@ client.on("message", function(message) {
                     await page.goto('https://nomanssky.fandom.com/fr/wiki/Recettes_de_raffinerie');
                     let urls = await page.$$eval('.toc tbody > tr', links => {
                         result = links.filter(link => {
+                            console.log("test")
                             console.log(link.querySelector('td:first-child > a:last-child').textContent)
+                            console.log("test1")
                             return link.querySelector('td:first-child > a:last-child').textContent + " -> " + link.querySelector('td:last-child > a:last-child').textContent;
                         });
-                        console.log(result)
                         return result;
                     });
-                    console.log(urls)
                     message.reply("ceci est un test : \n " + urls);
                     await browser.close();
                   })();
