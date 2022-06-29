@@ -35,10 +35,10 @@ client.on("message", function(message) {
                     
                     await page.goto('https://nomanssky.fandom.com/fr/wiki/Recettes_de_raffinerie');
 
-                    const selector = '';
+                    // const selector = '';
 
-                    const row = await page.$$eval('table:nth-of-type(1) > tbody tr td', elements => elements.map(element => element.textContent));
-                    console.log(row)
+                    // const row = await page.$$eval('table:nth-of-type(1) > tbody tr td', elements => elements.map(element => element.textContent));
+                    // console.log(row)
                     
 
                     // let row = await page.evaluate(() => {
@@ -47,9 +47,20 @@ client.on("message", function(message) {
                     //     return headings_table[1];
                     // });
 
+                    let row = await page.evaluate(() => {
+                        headings_elements_table1 = document.querySelectorAll('table:nth-of-type(1) > tbody tr td');
+                        console.log('debug1')
+                        headings_array_table1 = Array.from(headings_elements_table1); 
+                        headings_array_table1.map(heading => {
+                            console.log(heading.textContent)
+                            var tmpString = heading.textContent
+                            var tmpStringModify = tmpString.replace('\n', '')
+                            return tmpStringModify;
+                        });
+                    });
 
                     // let urls2 = await page.evaluate(() => {
-                    //     headings_elements_table1 = document.querySelectorAll('table:nth-child(2) tbody tr td ');
+                    //     headings_elements_table1 = document.querySelectorAll('table:nth-of-type(1) > tbody tr td');
                     //     console.log('debug1')
                     //     headings_array_table1 = Array.from(headings_elements_table1); 
                     //     headings_array_table1.map(heading => {
