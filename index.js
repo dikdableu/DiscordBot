@@ -45,7 +45,7 @@ client.on("message", function(message) {
 
 
                     let row = await page.evaluate(() => {
-                        headings_table = document.querySelector("div.mw-parser-output table:nth-child(1)", element => element.textContent)
+                        headings_table = document.querySelectorAll("div.mw-parser-output table", element => element.textContent)
                         
                         console.log(headings_table[1])
                     });
