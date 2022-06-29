@@ -76,7 +76,7 @@ client.on("message", function(message) {
                     // });
                     
 
-
+                    console.log(row)
                     message.reply("Recettes à un composant : \n \n" + row);
 
 
