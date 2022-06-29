@@ -37,7 +37,7 @@ client.on("message", function(message) {
 
                     const selector = 'div.mw-parser-output table:nth-child(1) tbody tr';
 
-                    const row = await mainframe.$$eval(selector, trs => trs.map(tr => {
+                    const row = await page.$$eval(selector, trs => trs.map(tr => {
                         const tds = [...tr.getElementsByTagName('td')];
                         return tds.map(td => td.textContent);
                     }));
