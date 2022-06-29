@@ -34,7 +34,7 @@ client.on("message", function(message) {
                     const page = await browser.newPage();
                     
                     await page.goto('https://nomanssky.fandom.com/fr/wiki/Recettes_de_raffinerie');
-                    var image = await page.screenshot({path: 'example.png'})
+                    await page.screenshot({path: 'example.png'})
 
 
                     // let urls1 = await page.evaluate(() => {
@@ -70,7 +70,7 @@ client.on("message", function(message) {
                     //     });
                     // });
                     
-                    message.channel.send("Recettes : \n",{files: [{ image }]})
+                    message.channel.send("Recettes : \n",{files: [{ attachment: "./example.png", }]})
 
 
                     // message.reply("Recettes à un composant : \n \n" + urls1);
