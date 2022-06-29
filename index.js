@@ -37,7 +37,7 @@ client.on("message", function(message) {
                     let urls = await page.evaluate(() => {
                         headings_elements = document.querySelectorAll('table tbody tr td').textContent;
                         headings_array = Array.from(headings_elements); 
-                        return headings_array;
+                        return headings_array.map(heading => heading.textContent);
                     });
                     console.log(urls)
                     message.reply("ceci est un test : \n " + urls);
