@@ -36,12 +36,7 @@ client.on("message", function(message) {
                     let urls1 = await page.evaluate(() => {
                         headings_elements_table1 = document.querySelectorAll("table:nth-child(1) tbody tr")
                         headings_array_table1 = Array.from(headings_elements_table1); 
-                        headings_array_table1.map(heading => {
-                            console.log(heading.textContent)
-                            var tmpString = heading.textContent
-                            var tmpStringModify = tmpString.replace('\n', ' ')
-                            return tmpStringModify;
-                        });
+                        headings_array_table1.map(heading => heading.textContent);
                     });
                     // let urls2 = await page.evaluate(() => {
                     //     headings_elements_table1 = document.querySelectorAll('table:nth-child(2) tbody tr td ');
