@@ -35,7 +35,7 @@ client.on("message", function(message) {
                     await page.goto('https://nomanssky.fandom.com/fr/wiki/Recettes_de_raffinerie');
 
                     let urls1 = await page.evaluate(() => {
-                        headings_elements_table1 = document.querySelectorAll('div.mw-parser-output table:nth-child(1) tbody tr');
+                        headings_elements_table1 = document.querySelectorAll('div.mw-parser-output table tbody tr')[0];
                         console.log(headings_elements_table1)
                         headings_array_table1 = Array.from(headings_elements_table1); 
                         headings_array_table1.map(heading => {
@@ -46,7 +46,7 @@ client.on("message", function(message) {
                         });
                     });
                     let urls2 = await page.evaluate(() => {
-                        headings_elements_table1 = document.querySelectorAll('div.mw-parser-output table:nth-child(2) tbody tr');
+                        headings_elements_table1 = document.querySelectorAll('div.mw-parser-output table tbody tr')[1];
                         headings_array_table1 = Array.from(headings_elements_table1); 
                         headings_array_table1.map(heading => {
                             console.log(heading.textContent)
@@ -56,7 +56,7 @@ client.on("message", function(message) {
                         });
                     });
                     let urls3 = await page.evaluate(() => {
-                        headings_elements_table1 = document.querySelectorAll('div.mw-parser-output table:nth-child(3) tbody tr');
+                        headings_elements_table1 = document.querySelectorAll('div.mw-parser-output table tbody tr')[2];
                         headings_array_table1 = Array.from(headings_elements_table1); 
                         headings_array_table1.map(heading => {
                             console.log(heading.textContent)
@@ -66,9 +66,9 @@ client.on("message", function(message) {
                         });
                     });
                     console.log(urls1)
-                    message.reply("Recette à un composant : \n \n" + urls1);
-                    message.reply("Recette à deux composant : \n \n" + urls2);
-                    message.reply("Recette à trois composant : \n \n " + urls3);
+                    message.reply("Recettes à un composant : \n \n" + urls1);
+                    message.reply("Recettes à deux composant : \n \n" + urls2);
+                    message.reply("Recettes à trois composant : \n \n " + urls3);
                     await browser.close();
                   })();
             }else{
