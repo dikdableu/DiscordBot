@@ -41,7 +41,7 @@ client.on("message", function(message) {
                         const tds = [...tr.getElementsByTagName('td')];
                         return tds.map(td => td.textContent);
                     }));
-
+                    console.log(row)
 
 
                     // let urls1 = await page.evaluate(() => {
