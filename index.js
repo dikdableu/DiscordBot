@@ -37,6 +37,7 @@ client.on("message", function(message) {
                         headings_elements_table1 = document.querySelectorAll("div.mw-parser-output table:nth-child(1) tr")
                         headings_array_table1 = Array.from(headings_elements_table1); 
                         headings_array_table1.map(heading => heading.textContent);
+                        console.log(headings_array_table1)
                     });
                     // let urls2 = await page.evaluate(() => {
                     //     headings_elements_table1 = document.querySelectorAll('table:nth-child(2) tbody tr td ');
