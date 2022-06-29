@@ -27,7 +27,8 @@ client.on("message", function(message) {
                         "headless": true,
                         "executablePath": '/usr/bin/chromium',
                         "args": [
-                            '--disable-web-security',
+                            '--no-sandbox',
+                            '--disable-gpu',
                         ]
                     })
                     const page = await browser.newPage();
@@ -48,6 +49,7 @@ client.on("message", function(message) {
                         "headless": true,
                         "executablePath": '/usr/bin/chromium',
                         "args": [
+                            '--no-sandbox',
                             '--disable-gpu',
                         ]
                     })
