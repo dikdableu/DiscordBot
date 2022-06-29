@@ -73,11 +73,10 @@ client.on("message", function(message) {
                     message.channel.send("Recettes : \n",
                     {
                         files: [{ 
-                            attachment: './capture.png', 
+                            attachment: '/home/node/app/DiscordBot/capture.png', 
                             name: 'capture.png'
                         }]
-                    }).then(console.log)
-                    .catch(console.error);
+                    })
 
 
                     // message.reply("Recettes à un composant : \n \n" + urls1);
