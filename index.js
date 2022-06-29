@@ -37,7 +37,7 @@ client.on("message", function(message) {
 
                     const selector = '';
 
-                    const row = await page.$$eval('.mw-parser-output .jquery-tablesorter:nth-child(6) tbody tr', elements => elements.map(element => element.innerHTML));
+                    const row = await page.$$eval('table:nth-of-type(1) > tbody tr', elements => elements.map(element => element.innerHTML));
                     console.log(row)
                     
 
