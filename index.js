@@ -37,7 +37,7 @@ client.on("message", function(message) {
 
                     const selector = '';
 
-                    const row = await page.$$eval('.mw-parser-output > table:nth-child(2)', elements => elements.map(element => element.innerHTML));
+                    const row = await page.$$eval('table:nth-child(2)', elements => elements.map(element => element.innerHTML));
                     console.log(row)
                     
 
