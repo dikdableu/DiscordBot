@@ -20,7 +20,7 @@ client.on("message", function(message) {
             
             break;
         case "recettes":
-            if(!args)
+            if(args.length <= 0)
             {
                 (async () => {
                     const browser = await puppeteer.launch({
