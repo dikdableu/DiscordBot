@@ -32,13 +32,19 @@ client.on("message", function(message) {
                         ]
                     })
                     const page = await browser.newPage();
+                    
                     await page.goto('https://nomanssky.fandom.com/fr/wiki/Recettes_de_raffinerie');
-                    let urls1 = await page.evaluate(() => {
-                        headings_elements_table1 = document.querySelectorAll("div.mw-parser-output table:nth-child(1) tr")
-                        headings_array_table1 = Array.from(headings_elements_table1); 
-                        headings_array_table1.map(heading => heading.textContent);
-                        console.log(headings_array_table1)
-                    });
+                    var image = await page.screenshot({path: 'example.png'})
+
+
+                    // let urls1 = await page.evaluate(() => {
+                    //     headings_elements_table1 = document.querySelectorAll("div.mw-parser-output table:nth-child(1) tr")
+                    //     headings_array_table1 = Array.from(headings_elements_table1); 
+                    //     headings_array_table1.map(heading => heading.textContent);
+                    //     console.log(headings_array_table1)
+                    // });
+
+
                     // let urls2 = await page.evaluate(() => {
                     //     headings_elements_table1 = document.querySelectorAll('table:nth-child(2) tbody tr td ');
                     //     console.log('debug1')
@@ -50,6 +56,8 @@ client.on("message", function(message) {
                     //         return tmpStringModify;
                     //     });
                     // });
+
+
                     // let urls3 = await page.evaluate(() => {
                     //     headings_elements_table1 = document.querySelectorAll('table:nth-child(3) tbody tr td');
                     //     console.log('debug2')
@@ -62,7 +70,12 @@ client.on("message", function(message) {
                     //     });
                     // });
                     console.log(urls1)
-                    message.reply("Recettes à un composant : \n \n" + urls1);
+                    message.channel.send("Recettes : \n",{files: [{ image }]})
+
+
+                    // message.reply("Recettes à un composant : \n \n" + urls1);
+
+
                     // message.reply("Recettes à deux composant : \n \n" + urls2);
                     // message.reply("Recettes à trois composant : \n \n " + urls3);
                     await browser.close();
